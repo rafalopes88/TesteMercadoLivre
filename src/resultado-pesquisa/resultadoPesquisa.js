@@ -33,9 +33,11 @@ class ResultadoPesquisa extends React.Component {
             )
     }
     componentDidMount() {
-        this.loadResults();
+        if(this.state.searchValue){
+            this.loadResults();
+        }
     }
-
+   
 
     render() {
         if(this.state.produtos){
@@ -43,7 +45,7 @@ class ResultadoPesquisa extends React.Component {
                 <div>
                     <CaixaPesquisa  
                         value={this.state.searchValue}
-                        onSubmit={(search) => this.handleSearch(search)}
+                        
                     />
                     <Categorias
                         categories={this.state.produtos.categories} 

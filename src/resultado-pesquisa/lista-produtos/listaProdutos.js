@@ -11,7 +11,11 @@ function ListaProdutos(props) {
     listaProdutos.pop();
     return( 
         <div className='listaProdutos'>
-            {listaProdutos}
+            <div className='filler'></div>
+            <div className='conteudo'>
+                {listaProdutos}
+            </div>
+            <div className='filler'></div>
         </div>
     );
 }

@@ -1,9 +1,12 @@
 @import '../../styles/_geral.scss';
 
 .listaProdutos {
-    background-color: $white-color;
-    margin-left: 12%;
-    width: calc(70.5% + 66px);
+    display: flex;
+    .conteudo{
+        background-color: $white-color;
+        flex-grow: 1;
+    }
+    
     
     .divisor{
         height: 2px;

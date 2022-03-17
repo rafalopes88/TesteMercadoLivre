@@ -1,14 +1,16 @@
 import CaixaPesquisa from '../caixa-de-pesquisa/caixaPesquisa.js';
 import Categorias from '../categorias/categorias.js';
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import  DetalhesProduto  from './detalhesProduto.js';
+import './detalhamentoProduto.scss'
 
 export function withRouter(Children){
     return(props)=>{
 
-       const match  = {params: useParams()};
-       return <Children {...props}  match = {match}/>
+       const params= useParams();
+       const navigate = useNavigate();
+       return <Children {...props}  params = {params} navigate={navigate}/>
    }
 }
 
@@ -19,7 +21,7 @@ class DetalhamentoProduto extends React.Component {
         const queryParams = new URLSearchParams(window.location.search);
         
         const search = queryParams.get("search");
-        const { id } = props.match.params;
+        const { id } = props.params;
     
         this.state = {
             searchValue: search,
@@ -42,21 +44,25 @@ class DetalhamentoProduto extends React.Component {
                 this.setState({
                     error: error
                 });
-            }
-            )
+            })
     }
     componentDidMount() {
-        this.loadResults();
+        if(this.state.idProduto){
+            this.loadResults();
+        }
     }
 
+    voltarPesquisaSearch(search){
+        this.props.navigate('/items?search='+search, {replace:true});
+    }
 
     render() {
         if(this.state.detalhes){
             return (
-                <div>
+                <div className='detalhamentoProduto'>
                     <CaixaPesquisa  
                         value={this.state.searchValue}
-                        onSubmit={(search) => this.handleSearch(search)}
+                        onSubmit={(search) => this.voltarPesquisaSearch(search)}
                     />
                     <Categorias
                         categories={this.state.detalhes.categories} 
@@ -64,6 +70,7 @@ class DetalhamentoProduto extends React.Component {
                     <DetalhesProduto
                         produto={this.state.detalhes} 
                     />
+                    <center><div className='botaoVoltar' onClick={()=>{this.voltarPesquisaSearch(this.state.searchValue)}}>Volver a la lista de productos</div></center>
                 </div>
                 
             );

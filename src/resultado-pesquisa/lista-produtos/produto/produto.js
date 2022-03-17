@@ -27,7 +27,7 @@ function Produto(props) {
                 </div>
             </div>
             <div className='local'>
-                {produto.condition}
+                {produto.location}
             </div>
             
         </div>

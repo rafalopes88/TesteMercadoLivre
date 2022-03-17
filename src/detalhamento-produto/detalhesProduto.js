@@ -2,7 +2,7 @@ import React from 'react';
 import './detalhesProduto.scss';
 
 function DetalhesProduto(props) {
-    console.log(props.produto);
+    
     const formatter = new Intl.NumberFormat('pt-br', {
         style: 'currency',
         currency: props.produto.price.currency,
@@ -18,7 +18,7 @@ function DetalhesProduto(props) {
                     </div>
                     <div className='texto'>
                         <div className='condition'>
-                            {props.produto.condition} - {props.produto.sold_quantity} vendidos
+                            {props.produto.condition.replace('new', 'Nuevo')} - {props.produto.sold_quantity} vendidos
                         </div>
                         <div className='title'>
                             {props.produto.title}
