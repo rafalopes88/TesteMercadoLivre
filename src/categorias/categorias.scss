@@ -1,0 +1,13 @@
+@import '../styles/_geral.scss';
+
+.categorias{
+    display: flex;
+    margin-top: 16px;
+    font-size: 14px;
+    margin-bottom: 16px;
+    color: $soft-gray-color;
+
+    .content{
+        flex-grow: 1;
+    }
+}

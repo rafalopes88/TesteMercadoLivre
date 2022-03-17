@@ -1,4 +1,4 @@
-@import '../styles/_colors.scss';
+@import '../styles/_geral.scss';
 
 
 .caixaPesquisa {
@@ -6,52 +6,53 @@
     height: 50px;
     display: flex;
     width:100%;
-    justify-content: center;
-    align-items: center;
     
-    .logo{
-        margin-left: 10%;
-    }
+    .content{
 
-    .searchInput{
         flex-grow: 1;
-        margin-left: 2%;
-        display: inline-flex;
-
-        form{
-            display: inline-flex;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .searchInput{
             flex-grow: 1;
-        }
-
-        .searchText{
-            width:80%;
+            margin-left: 2%;
             display: inline-flex;
 
-            
+            form{
+                display: inline-flex;
+                flex-grow: 1;
+            }
 
-            input{
-                width:100%;
+            .searchText{
+                display: inline-flex;
+
+                flex-grow: 1;
+
+                input{
+                    width:100%;
+                    border: none;
+                    height: 30px;
+                    padding: 0px 15px;
+                    font-size:18px;
+                }
+                input:focus{
+                    outline: none;
+                }
+                
+            }
+            button{
                 border: none;
                 height: 30px;
-                padding: 0px 15px;
-                font-size:18px;
-            }
-            input:focus{
-                outline: none;
+                display: inline-flex;
+                align-items: center;
+                cursor: pointer;
             }
             
-        }
-        button{
-            border: none;
-            height: 30px;
-            display: inline-flex;
-            align-items: center;
-            cursor: pointer;
-        }
-        
-        .searchButton{
-            display: inline-flex;
-            background-color: #EEEEEE;
+            .searchButton{
+                display: inline-flex;
+                background-color:$soft-gray-color;
+            }
         }
     }
 }

@@ -1,28 +1,41 @@
 import CaixaPesquisa from '../caixa-de-pesquisa/caixaPesquisa.js';
 import Categorias from '../categorias/categorias.js';
-import ListaProdutos from './lista-produtos/listaProdutos.js';
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import  DetalhesProduto  from './detalhesProduto.js';
 
-class ResultadoPesquisa extends React.Component {
+export function withRouter(Children){
+    return(props)=>{
+
+       const match  = {params: useParams()};
+       return <Children {...props}  match = {match}/>
+   }
+}
+
+class DetalhamentoProduto extends React.Component {
     
     constructor(props) {
         super(props)
         const queryParams = new URLSearchParams(window.location.search);
+        
         const search = queryParams.get("search");
-
+        const { id } = props.match.params;
+    
         this.state = {
             searchValue: search,
+            idProduto:id,
             error: null,
             produtos: null
         }
     }
     loadResults(){
-        fetch("http://localhost:5000/api/items?q="+this.state.searchValue)
+        
+        fetch("http://localhost:5000/api/items/"+this.state.idProduto)
             .then(res => res.json())
             .then(
             (result) => {
                 this.setState({
-                    produtos:result
+                    detalhes:result.item
                 });
             },
             (error) => {
@@ -38,7 +51,7 @@ class ResultadoPesquisa extends React.Component {
 
 
     render() {
-        if(this.state.produtos){
+        if(this.state.detalhes){
             return (
                 <div>
                     <CaixaPesquisa  
@@ -46,11 +59,10 @@ class ResultadoPesquisa extends React.Component {
                         onSubmit={(search) => this.handleSearch(search)}
                     />
                     <Categorias
-                        categories={this.state.produtos.categories} 
+                        categories={this.state.detalhes.categories} 
                     />
-                    <ListaProdutos
-                        search={this.state.searchValue}
-                        products={this.state.produtos.items} 
+                    <DetalhesProduto
+                        produto={this.state.detalhes} 
                     />
                 </div>
                 
@@ -60,11 +72,10 @@ class ResultadoPesquisa extends React.Component {
            return ( 
                 <CaixaPesquisa  
                     value={this.state.searchValue}
-                    onSubmit={(search) => this.handleSearch(search)}
                 />
            )
         }
     }
 }
 
-export default ResultadoPesquisa;
+export default withRouter(DetalhamentoProduto);

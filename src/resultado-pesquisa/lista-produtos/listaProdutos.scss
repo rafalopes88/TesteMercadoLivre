@@ -1,0 +1,15 @@
+@import '../../styles/_geral.scss';
+
+.listaProdutos {
+    background-color: $white-color;
+    margin-left: 12%;
+    width: calc(70.5% + 66px);
+    
+    .divisor{
+        height: 2px;
+        width: 95%;
+        background-color: $background-color;
+    }
+}
+
+

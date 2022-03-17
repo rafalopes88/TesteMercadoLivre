@@ -1,0 +1,41 @@
+@import '../../../styles/colors';
+
+.produto{
+    cursor:pointer;
+    display: flex;
+    .imagem{
+        margin: 16px;
+        img{
+            width:180px;
+            height: 180px;
+            border-radius: 4px;
+        }
+        
+    }
+
+    .detalhes{
+        margin-top: 32px;
+        flex-grow: 1;
+
+        .preco{ 
+            font-size: 24px;
+            margin-bottom: 32px;
+        }
+
+        .titulo{
+            font-size: 18px;
+        }
+    }
+
+    .local{
+        display: flex;
+        margin-top: 32px;
+        width: 33%;
+        justify-content: center;
+        flex-shrink: 0;
+        color:$dark-grey;
+    }
+
+   
+}
+

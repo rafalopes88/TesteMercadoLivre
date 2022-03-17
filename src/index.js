@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 
 import ResultadoPesquisa from "./resultado-pesquisa/resultadoPesquisa";
+import DetalhamentoProduto from "./detalhamento-produto/detalhamentoProduto";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,6 +18,7 @@ ReactDOM.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="items" element={<ResultadoPesquisa />} />
+      <Route path="items/:id" element={<DetalhamentoProduto />} />
     </Routes>
   </BrowserRouter>,
   </React.StrictMode>,

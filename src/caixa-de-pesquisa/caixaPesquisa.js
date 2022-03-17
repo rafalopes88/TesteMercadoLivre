@@ -20,23 +20,27 @@ class CaixaPesquisa extends React.Component {
   }
 
   render(){
-    return <div className='caixaPesquisa' >
-      
-      <div className='logo'>
-        <img src={logo} alt=''/>   
-      </div>
-      <div className='searchInput'>
-        <form onSubmit={() => this.props.onSubmit(this.state.value)}>
-          <div className='searchText'>
-            <input type="text" placeholder='Buscar produtos' name="search" value={this.state.value} onChange={this.handleChange}/>
+    return (
+      <div className='caixaPesquisa' >
+        <div className='filler'></div>
+        <div className='content'>
+          <div className='logo'>
+            <img src={logo} alt=''/>   
           </div>
-          <button >
-            <img  src={seachButton}  />
-          </button>
-        </form>
+          <div className='searchInput'>
+            <form onSubmit={() => this.props.onSubmit(this.state.value)}>
+              <div className='searchText'>
+                <input type="text" placeholder='Buscar produtos' name="search" value={this.state.value} onChange={this.handleChange}/>
+              </div>
+              <button >
+                <img  src={seachButton}  />
+              </button>
+            </form>
+          </div>
+        </div>
+        <div className='filler'></div>
       </div>
-      
-    </div>;
+    );
   }
 }
 

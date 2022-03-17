@@ -1,0 +1,59 @@
+@import '../styles/colors';
+.wrapper{
+    display: flex;
+    
+    .detalhesProduto{
+        flex-grow: 1;
+        background-color: $white-color;
+        .conteudo{
+            display: flex;
+            
+            .texto{
+                flex-grow: 1;
+                margin-top: 32px;
+                .condition{
+                    font-size: 14px;
+                }
+                .title{
+                    width: 60%;
+                    margin-top: 16px;
+                    font-size: 24px;
+                }
+                .price{
+                    margin-top: 32px;
+                    font-size: 46px;
+                }
+                button{
+                    width: calc(100% - 32px);
+                    background-color: #3483FA;
+                    border: none;
+                    border-radius: 4px;
+                    color: white;
+                    height: 40px;
+                    font-size: 20px;
+                    margin-top: 32px;
+                    cursor: pointer;
+                }
+            }
+            .imagem{
+                flex-shrink: 0;   
+                img{
+                    width: 680px;
+                    
+                }
+            }
+        }
+        .description{
+            margin-left: 32px;
+            .title{
+                font-size: 28px;
+            }
+            .conteudo{
+                margin-top: 32px;
+                margin-bottom: 32px;
+                font-size: 16px;
+                color: $soft-gray-color;
+            }
+        }
+    }
+}
