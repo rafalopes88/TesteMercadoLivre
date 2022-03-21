@@ -4,7 +4,9 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import  DetalhesProduto  from './detalhesProduto.js';
 import './detalhamentoProduto.scss'
+import Error from '../errors/error.js';
 
+const MENSAGEM_ERROR = 'No se pueden encontrar los detalles del producto para el identificador dado'
 export function withRouter(Children){
     return(props)=>{
 
@@ -27,24 +29,26 @@ class DetalhamentoProduto extends React.Component {
             searchValue: search,
             idProduto:id,
             error: null,
-            produtos: null
+            detalhes: null
         }
     }
-    loadResults(){
-        
-        fetch("http://localhost:5000/api/items/"+this.state.idProduto)
-            .then(res => res.json())
-            .then(
-            (result) => {
-                this.setState({
-                    detalhes:result.item
-                });
-            },
-            (error) => {
-                this.setState({
-                    error: error
-                });
-            })
+    async loadResults(){
+        try{
+            const response = await fetch("http://localhost:5000/api/items/"+this.state.idProduto)
+            const result = await response.json(); 
+
+            if(!response.ok){
+                throw new Error(result.error);
+            }
+            this.setState({
+                detalhes:result.item
+            });
+        }
+        catch(e){
+            this.setState({
+                error: MENSAGEM_ERROR
+            });
+        }
     }
     componentDidMount() {
         if(this.state.idProduto){
@@ -53,7 +57,8 @@ class DetalhamentoProduto extends React.Component {
     }
 
     voltarPesquisaSearch(search){
-        this.props.navigate('/items?search='+search, {replace:true});
+        const url = search ? '/items?search='+search : '/items';
+        this.props.navigate(url, {replace:true});
     }
 
     render() {
@@ -74,6 +79,17 @@ class DetalhamentoProduto extends React.Component {
                 </div>
                 
             );
+        }
+        else if(this.state.error){
+            return(<div>
+                <CaixaPesquisa
+                    value={this.state.searchValue}
+                
+                />
+                <Error msg={this.state.error}/>
+
+                <center><div className='botaoVoltar' onClick={()=>{this.voltarPesquisaSearch(this.state.searchValue)}}>Volver a la lista de productos</div></center>
+            </div>);
         }
         else{
            return ( 

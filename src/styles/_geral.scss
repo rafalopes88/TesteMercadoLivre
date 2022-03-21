@@ -1,12 +1,13 @@
 @import '_colors.scss';
 
 body {
+    font-family: "Proxima Nova";
     background-color: $background-color;
     width: 100%;
     height: 100%;
 }
 
 .filler{
-    width:12%;
+    width:17%;
     flex-shrink: 0;
 }

@@ -1,0 +1,12 @@
+@import '../styles/colors';
+.error{
+
+    display:flex;
+    .conteudo{
+        flex-grow: 1;
+        background-color:$white-color;
+        color: $dark-grey;
+        margin-top: 5%;
+    }
+
+}

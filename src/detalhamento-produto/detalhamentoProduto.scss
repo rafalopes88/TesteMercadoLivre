@@ -1,11 +1,10 @@
 @import '../styles/geral';
 
-.detalhamentoProduto{
-    .botaoVoltar{
-        text-decoration: underline;
-        color:$soft-gray-color;
-        cursor: pointer;
-        margin-top:32px;
-        font-size: 16px;
-    }
+
+.botaoVoltar{
+    text-decoration: underline;
+    color:$soft-gray-color;
+    cursor: pointer;
+    margin-top:32px;
+    font-size: 16px;
 }

@@ -28,7 +28,7 @@ class CaixaPesquisa extends React.Component {
             <img src={logo} alt=''/>   
           </div>
           <div className='searchInput'>
-            <form onSubmit={() => this.props.onSubmit(this.state.value)}>
+            <form onSubmit={() => this.props.onSubmit? this.props.onSubmit(this.state.value): ''}>
               <div className='searchText'>
                 <input type="text" placeholder='Nunca dejes de buscar' name="search" value={this.state.value?this.state.value:''} onChange={this.handleChange}/>
               </div>
