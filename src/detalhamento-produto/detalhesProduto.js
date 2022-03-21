@@ -14,14 +14,14 @@ function DetalhesProduto(props) {
             <div className='detalhesProduto'>
                 <div className='conteudo'>
                     <div className='imagem'>
-                        <img src={props.produto.picture}/>
+                        <center><img src={props.produto.picture}/></center>
                     </div>
                     <div className='texto'>
                         <div className='condition'>
-                            {props.produto.condition.replace('new', 'Nuevo')} - {props.produto.sold_quantity} vendidos
+                            {props.produto.condition.replace('new', 'Nuevo').replace('used','usado')} - {props.produto.sold_quantity} vendidos
                         </div>
                         <div className='title'>
-                            {props.produto.title}
+                            <b>{props.produto.title}</b>
                         </div>
                         <div className='price'>
                             {formatter.format(props.produto.price.amount/100).replace('ARS','$')}
