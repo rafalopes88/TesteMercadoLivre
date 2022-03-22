@@ -1,0 +1,1 @@
+export const SERVIDOR_ENDERECO = 'http://localhost:5000';

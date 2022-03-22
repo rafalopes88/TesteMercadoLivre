@@ -3,6 +3,7 @@ import Categorias from '../categorias/categorias.js';
 import ListaProdutos from './lista-produtos/listaProdutos.js';
 import React from 'react';
 import Error from '../errors/error.js';
+import * as minhasConstates from '../constantes.js';
 
 const MENSAGEM_ERROR = 'No se puede buscar este término. Vuelva a intentarlo con otro término.'
 
@@ -21,7 +22,7 @@ class ResultadoPesquisa extends React.Component {
     }
     async loadResults(){
         try{
-            const response = await fetch("http://localhost:5000/api/items?q="+this.state.searchValue);
+            const response = await fetch(minhasConstates.SERVIDOR_ENDERECO+'/api/items?q='+this.state.searchValue);
             const result = await response.json();
 
             if(!response.ok){

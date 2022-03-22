@@ -5,6 +5,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import  DetalhesProduto  from './detalhesProduto.js';
 import './detalhamentoProduto.scss'
 import Error from '../errors/error.js';
+import * as minhasConstates from '../constantes.js';
 
 const MENSAGEM_ERROR = 'No se pueden encontrar los detalles del producto para el identificador dado'
 export function withRouter(Children){
@@ -34,7 +35,7 @@ class DetalhamentoProduto extends React.Component {
     }
     async loadResults(){
         try{
-            const response = await fetch("http://localhost:5000/api/items/"+this.state.idProduto)
+            const response = await fetch(minhasConstates.SERVIDOR_ENDERECO+'/api/items/'+this.state.idProduto)
             const result = await response.json(); 
 
             if(!response.ok){
