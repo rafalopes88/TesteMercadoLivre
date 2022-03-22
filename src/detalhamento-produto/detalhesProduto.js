@@ -9,12 +9,12 @@ function DetalhesProduto(props) {
     });
     
     return( 
-        <div className='wrapper'>
+        <div className='empacota'>
             <div className='filler'></div>
             <div className='detalhesProduto'>
                 <div className='conteudo'>
                     <div className='imagem'>
-                        <center><img src={props.produto.picture}/></center>
+                        <center><img src={props.produto.picture} alt=''/></center>
                     </div>
                     <div className='texto'>
                         <div className='condition'>

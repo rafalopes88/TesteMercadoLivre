@@ -1,5 +1,6 @@
 @import '../styles/colors';
-.wrapper{
+
+.empacota{
     display: flex;
     
     .detalhesProduto{
@@ -10,12 +11,12 @@
             margin-top: 32px;
             .texto{
                 flex-grow: 1;
-               
+                margin-right: 32px;
+
                 .condition{
                     font-size: 14px;
                 }
                 .title{
-                    width: 60%;
                     margin-top: 16px;
                     font-size: 24px;
                     
@@ -25,7 +26,7 @@
                     font-size: 46px;
                 }
                 button{
-                    width: calc(100% - 32px);
+                    width: 100%;
                     background-color: #3483FA;
                     border: none;
                     border-radius: 4px;
@@ -38,11 +39,7 @@
             }
             .imagem{
                 flex-shrink: 0;
-            
-                
-                    width: 680px;
-                    
-                
+                width: 680px;
             }
         }
         .description{
@@ -58,7 +55,7 @@
                 font-size: 16px;
                 color: $soft-gray-color;
                 margin-right: 32px;
-                width:680px;
+                width:648px;
             }
         }
     }

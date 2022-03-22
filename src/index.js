@@ -20,7 +20,7 @@ ReactDOM.render(
       <Route path="items" element={<ResultadoPesquisa />} />
       <Route path="items/:id" element={<DetalhamentoProduto />} />
     </Routes>
-  </BrowserRouter>,
+  </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
