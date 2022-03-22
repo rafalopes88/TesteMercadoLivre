@@ -1,4 +1,24 @@
-# Getting Started with Create React App
+# Teste Mercado Livre App
+
+Aplicação feita como teste pratico para desenvolvedor frontend para o mercado livre. Dever ser executado em conjunto com o servidor presente em (https://github.com/rafalopes88/testeMercadoLivreServidor). 
+
+O projeto foi feito utilizando as seguintes versões das tecnologias:
+
+# Versões
+
+- nodejs v16.14.0
+- npm 8.3.1
+- React 17.0.2
+
+Para executar o projeto deve-se primeiro executar o comando
+
+```
+npm install
+```
+
+Em seguida seguir a documentação abaixo
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
