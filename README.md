@@ -1,8 +1,10 @@
+# Teste Mercado Livre App
+
 Aplicação feita como teste pratico para desenvolvedor frontend para o mercado livre. Dever ser executado em conjunto com o servidor presente em (https://github.com/rafalopes88/testeMercadoLivreServidor). 
 
 O projeto foi feito utilizando as seguintes versões das tecnologias:
 
-# versões
+# Versões
 
 - nodejs v16.14.0
 - npm 8.3.1
