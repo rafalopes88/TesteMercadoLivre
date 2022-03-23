@@ -1,15 +1,21 @@
 @import '../../styles/_colors.scss';
 
-.listaProdutos {
+main {
     display: flex;
     .conteudo{
         background-color: $white-color;
         flex-grow: 1;
+
+        ul{
+            margin: 0;
+            padding: 0;
+        }
     }
     
     
     .divisor{
-        height: 2px;
+        border: none;
+        height:2px;
         width: 95%;
         background-color: $background-color;
     }

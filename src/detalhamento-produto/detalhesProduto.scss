@@ -1,16 +1,17 @@
 @import '../styles/colors';
 
-.empacota{
+main {
     display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
     
     .detalhesProduto{
-        flex-grow: 1;
         background-color: $white-color;
         .conteudo{
             display: flex;
             margin-top: 32px;
             .texto{
-                flex-grow: 1;
                 margin-right: 32px;
 
                 .condition{

@@ -9,14 +9,14 @@ function DetalhesProduto(props) {
     });
     
     return( 
-        <div className='empacota'>
-            <div className='filler'></div>
-            <div className='detalhesProduto'>
-                <div className='conteudo'>
-                    <div className='imagem'>
+        <main>
+            <span className='filler'></span>
+            <span className='detalhesProduto'>
+                <section className='conteudo'>
+                    <figure className='imagem' >
                         <center><img src={props.produto.picture} alt=''/></center>
-                    </div>
-                    <div className='texto'>
+                    </figure>
+                    <span className='texto'>
                         <div className='condition'>
                             {props.produto.condition.replace('new', 'Nuevo').replace('used','usado')} - {props.produto.sold_quantity} vendidos
                         </div>
@@ -29,19 +29,19 @@ function DetalhesProduto(props) {
                         <button>
                             Comprar
                         </button>
-                    </div>
-                </div>
-                <div className='description'>
+                    </span>
+                </section>
+                <section className='description'>
                     <div className='title'>
                         Descripción del producto
                     </div>
                     <div className='conteudo'>
                         {props.produto.description}
                     </div>
-                </div>
-            </div>    
-            <div className='filler'></div>
-        </div>
+                </section>
+            </span>    
+            <span className='filler'></span>
+        </main>
     );
 }
 

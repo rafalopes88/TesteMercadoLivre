@@ -6,7 +6,9 @@
     height: 50px;
     display: flex;
     width:100%;
-    
+    .logo{
+        margin-left:0px ;
+    }
     .content{
 
         flex-grow: 1;
@@ -16,7 +18,6 @@
         
         .searchInput{
             flex-grow: 1;
-            margin-left: 2%;
             display: inline-flex;
 
             form{

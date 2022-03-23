@@ -14,23 +14,23 @@ function Produto(props) {
     });
     
     return( 
-        <div className='produto' onClick={() => navigate(produto.id+'?search='+props.search)}>
-            <div className='imagem'>
+        <li className='produto' onClick={() => navigate(produto.id+'?search='+props.search)}>
+            <figure className='imagem' alt=''>
                 <img src={produto.picture}/>
-            </div>
-            <div className='detalhes'>
+            </figure>
+            <section className='detalhes'>
                 <div className='preco'>
                     {formatter.format(produto.price.amount/100).replace('ARS','$')} {produto.free_shipping ? <img src={icShipping} alt=''/>:''}
                 </div>
                 <div className='titulo'>
                     {produto.title}
                 </div>
-            </div>
-            <div className='local'>
+            </section>
+            <section className='local'>
                 {produto.location}
-            </div>
+            </section>
             
-        </div>
+        </li>
         
 
     );

@@ -21,13 +21,13 @@ class CaixaPesquisa extends React.Component {
 
   render(){
     return (
-      <div className='caixaPesquisa' >
-        <div className='filler'></div>
+      <header className='caixaPesquisa' >
+        <span className='filler'></span>
         <div className='content'>
-          <div className='logo'>
+          <figure className='logo'>
             <img src={logo} alt=''/>   
-          </div>
-          <div className='searchInput'>
+          </figure>
+          <span className='searchInput'>
             <form onSubmit={() => this.props.onSubmit? this.props.onSubmit(this.state.value): ''}>
               <div className='searchText'>
                 <input type="text" placeholder='Nunca dejes de buscar' name="search" value={this.state.value?this.state.value:''} onChange={this.handleChange}/>
@@ -36,10 +36,10 @@ class CaixaPesquisa extends React.Component {
                 <img  src={seachButton}  />
               </button>
             </form>
-          </div>
+          </span>
         </div>
-        <div className='filler'></div>
-      </div>
+        <span className='filler'></span>
+      </header>
     );
   }
 }

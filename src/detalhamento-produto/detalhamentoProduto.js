@@ -73,10 +73,16 @@ class DetalhamentoProduto extends React.Component {
                     <Categorias
                         categories={this.state.detalhes.categories} 
                     />
+                    
                     <DetalhesProduto
                         produto={this.state.detalhes} 
                     />
-                    <center><div className='botaoVoltar' onClick={()=>{this.voltarPesquisaSearch(this.state.searchValue)}}>Volver a la lista de productos</div></center>
+                
+                    <footer className='botaoVoltar' onClick={()=>{this.voltarPesquisaSearch(this.state.searchValue)}}>
+                        <center>
+                            <label>Volver a la lista de productos</label>
+                        </center>
+                    </footer>
                 </div>
                 
             );

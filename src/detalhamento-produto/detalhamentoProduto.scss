@@ -2,10 +2,14 @@
 
 
 .botaoVoltar{
-    text-decoration: underline;
+    
     color:$soft-gray-color;
-    cursor: pointer;
     margin-top:32px;
-    font-size: 16px;
     margin-bottom: 32px;
+
+    label{
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 16px;
+    }
 }

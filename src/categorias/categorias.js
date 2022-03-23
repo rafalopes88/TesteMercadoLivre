@@ -5,11 +5,11 @@ function Categorias(props) {
     let apresentacaoCategorias = props.categories.join(' ❯ ');
 
     return( 
-        <div className='categorias'>
-            <div className='filler'></div>
-            <div className='content'>{apresentacaoCategorias}</div>
-            <div className='filler'></div>
-        </div>
+        <section className='categorias'>
+            <span className='filler'></span>
+            <span className='content'>{apresentacaoCategorias}</span>
+            <span className='filler'></span>
+        </section>
     );
 }
 
