@@ -4,13 +4,13 @@ import './error.scss';
 function Error(props) {
     
     return( 
-        <div className='error'>
-            <div className='filler'></div>
-            <div className='conteudo'>
+        <main className='error'>
+            <span className='filler'></span>
+            <span className='conteudo'>
                 <center>{props.msg}</center>
-            </div>
-            <div className='filler'></div>
-        </div>
+            </span>
+            <span className='filler'></span>
+        </main>
     );
 }
 
